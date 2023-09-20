@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: product-service
+  data:
+    mongodb:
+      uri: ${CONN_STR}
+      database: product-service
+
