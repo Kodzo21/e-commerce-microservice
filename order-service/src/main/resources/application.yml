@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: ${CONN_STR}
+    username: postgres
+    password: postgres
+
