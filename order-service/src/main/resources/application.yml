@@ -5,4 +5,7 @@ spring:
     url: ${CONN_STR}
     username: postgres
     password: postgres
-
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI}

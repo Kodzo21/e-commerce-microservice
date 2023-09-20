@@ -5,4 +5,7 @@ spring:
     mongodb:
       uri: ${CONN_STR}
       database: inventory-service
-
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI}
