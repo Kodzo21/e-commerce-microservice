@@ -3,9 +3,10 @@ spring:
     name: order-service
   datasource:
     url: ${CONN_STR}
-    username: postgres
-    password: postgres
+    driver-class-name: org.postgresql.Driver
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URI}
+server:
+  port: 0
