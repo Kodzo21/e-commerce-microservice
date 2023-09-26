@@ -10,4 +10,27 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+
+
+    public void createProduct() {
+        // TODO implement
+    }
+
+    public void updateProduct() {
+        // TODO implement
+    }
+
+    public void deleteProduct() {
+        // TODO implement
+    }
+
+    public void getProduct() {
+        // TODO implement
+    }
+
+    public void getAllProducts() {
+        // TODO implement
+    }
+
+
 }
