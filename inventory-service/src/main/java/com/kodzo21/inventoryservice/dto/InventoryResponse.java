@@ -1,4 +1,4 @@
-package com.kodzo21.dto;
+package com.kodzo21.inventoryservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,12 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class ProductResponse {
-    private String name;
-    private String description;
-    private String price;
+public class InventoryResponse {
     private String SKU;
+    private Integer quantity;
 }

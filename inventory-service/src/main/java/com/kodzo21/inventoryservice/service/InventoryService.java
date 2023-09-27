@@ -1,5 +1,7 @@
 package com.kodzo21.inventoryservice.service;
 
+import com.kodzo21.inventoryservice.dto.InventoryRequest;
+import com.kodzo21.inventoryservice.dto.InventoryResponse;
 import com.kodzo21.inventoryservice.model.Inventory;
 import com.kodzo21.inventoryservice.repository.InventoryRepository;
 import lombok.RequiredArgsConstructor;
@@ -32,16 +34,23 @@ public class InventoryService {
         inventoryRepository.delete(inventoryRepository.findBySKU(SKU));
     }
 
-    public void createInventory(String SKU, Integer quantity) {
-        inventoryRepository.save(
-                Inventory.builder()
-                        .SKU(SKU)
-                        .quantity(quantity)
-                        .build()
-        );
+    public InventoryResponse createInventory(InventoryRequest inventoryRequest) {
+        var inventory = Inventory.builder()
+                        .SKU(inventoryRequest.getSKU())
+                        .quantity(inventoryRequest.getQuantity())
+                        .build();
+        inventoryRepository.save(inventory);
+        return mapToResponse(inventory);
     }
 
     public Boolean checkIfIsInStock(String SKU) {
         return inventoryRepository.findBySKU(SKU).getQuantity() > 0;
+    }
+
+    private InventoryResponse mapToResponse(Inventory inventory) {
+        return InventoryResponse.builder()
+                .SKU(inventory.getSKU())
+                .quantity(inventory.getQuantity())
+                .build();
     }
 }

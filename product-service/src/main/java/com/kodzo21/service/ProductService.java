@@ -11,7 +11,6 @@ public class ProductService {
     private final ProductRepository productRepository;
 
 
-
     public void createProduct() {
         // TODO implement
     }
@@ -24,7 +23,11 @@ public class ProductService {
         // TODO implement
     }
 
-    public void getProduct() {
+    public void getProduct(String id) {
+        // TODO implement
+    }
+
+    public void findProduct(String name) {
         // TODO implement
     }
 
