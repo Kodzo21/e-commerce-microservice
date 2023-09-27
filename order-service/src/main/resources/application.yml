@@ -4,9 +4,19 @@ spring:
   datasource:
     url: ${CONN_STR}
     driver-class-name: org.postgresql.Driver
+  kafka:
+    bootstrap-servers: ${KAFKA_URI}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            type-mapping: event:com.kodzo21.orderservice.event.OrderPlacedEvent
 eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_URI}
+
 server:
   port: 0
